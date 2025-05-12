@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+    <link rel="shortcut icon" href="Prasilarts-Claire-Monitor-08-Computer-Grass.16.png" type="image/x-icon">
+    <style>
+       
+       @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Condensed+One&display=swap');
+       
+       body{
+            margin: 0;
+            padding: 0;
+            background-color: rgb(41, 3, 58);
+            font-family: sans-serif;
+        }
+
+        main {
+            max-width: 600px;
+            min-width: 320px;
+            margin: auto;
+            margin-bottom: 25px;
+        }
+        
+        
+        main>h1{
+            color: rgb(179, 176, 2);
+        }
+
+        legend{
+            font-weight: bold;
+            padding: 0 0.5rem;
+        }
+        
+        
+        form{
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            font-family: "Roboto", sans-serif;
+        }
+
+        form > p{
+            margin-top: -10px;
+            margin-bottom: 40px;
+        }
+
+        fieldset{
+            border: 1px solid #ccc;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+
+        ul{
+            padding: 0;
+            margin: 0;
+        }
+        
+        
+        ul > li{
+            list-style: none;
+            margin-bottom: 0.5rem;
+        }
+
+        label{
+            display: block;
+            margin-bottom: 0.2rem;
+
+        }
+
+        input[type="number"],
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="date"],
+        select{
+            width: 90%;
+            padding: 0.6rem;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        button{
+            border: none;
+            padding: 0.8rem 1.5rem;
+            background-color: rgb(41, 73, 255);
+            border-radius: 6px;
+            cursor: pointer;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        button:hover{
+            background-color: rgb(0, 2, 124);
+        }
+
+        h2{
+            margin-bottom: 50px;
+            border-bottom: 2px solid #7e7e7e73;
+            padding-bottom: 0.5rem;
+        }
+
+        div#spinner{
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 8px solid rgb(207, 207, 207);
+            margin: 0 auto;
+            border-bottom: 8px solid blue;
+            animation: girar 1s infinite linear;
+        }
+
+        @keyframes girar{
+            0% {transform: rotate(0de);}
+
+            100% {transform: rotate(360deg);}
+        }
+
+
+        div#spinner_box{
+            background-color: white;
+            padding: 15px;
+            display: none;
+        }
+
+        div#res{
+            background-color: white;
+            padding: 15px;
+            font-family:sans-serif;
+            display: none;
+        }
+
+        div#res > p{
+            font-family: "Roboto", sans-serif"
+        }
+
+        a{
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 6px;
+          
+        }
+
+        a:hover{
+            background-color: rgb(0, 53, 168);
+            color: rgb(255, 255, 255);
+        }
+
+    </style>
+</head>
+<body>
+     <main>
+        <h1>Descubra qual é seu IMC aqui</h1>
+
+        <div id="res">
+            
+            <h2>Resultados calculados:</h2>
+
+            <p><a href="https://drpaulopittelli.com.br/como-calcular-seu-indice-de-massa-corporal-imc/" title="site de referência" target="_blank">Ver referência aqui</a></p>
+            
+        </div>
+
+        <div id="spinner_box">
+            <div id="spinner"></div>
+        </div>
+          
+        <form id="formu">
+            <p>Campos obrigatórios seguidos de asterisco (*)</p>
+               <fieldset>
+                <legend>Informações Pessoais</legend>
+                
+                <p>
+                    <label for="name">Nome:</label>
+                    <input type="text" name="name" id="name">
+                </p>
+                
+                <p>
+                    <label for="tn">Celular:</label>
+                    <input type="number" name="tn" id="tn" placeholder="(DDD) 9 9999-9999"> *
+                </p>
+
+                <p>
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email"> *
+                </p>
+
+                <p>
+                    <label for="UF">Estado:</label>
+                    <select name="UF" id="UF">
+                        <option disabled selected>Selecionar</option>
+                        <option value="AC">Acre</option>
+                        <option value="AL">Alagoas</option>
+                        <option value="AP">Amapá</option>
+                        <option value="AM">Amazonas</option>
+                        <option value="BA">Bahia</option>
+                        <option value="CE">Ceará</option>
+                        <option value="ES">Espírito santo</option>
+                        <option value="GO">Goiás</option>
+                        <option value="MA">Maranhão</option>
+                        <option value="MT">Mato grosso</option>
+                        <option value="MS">Mato grosso do sul</option>
+                        <option value="MG">Minas gerais</option>
+                        <option value="PA">Pará</option>
+                        <option value="PB">Paraíba</option>
+                        <option value="PR">Paraná</option>
+                        <option value="PE">Pernambuco</option>
+                        <option value="PI">Piauí</option>
+                        <option value="RJ">Rio de janeiro</option>
+                        <option value="RN">Rio grande do norte</option>
+                        <option value="RS">Rio grande do sul</option>
+                        <option value="RO">Rondônia</option>
+                        <option value="RR">Roraima</option>
+                        <option value="SC">Santa Catarina</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="SE">Sergipe</option>
+                        <option value="TO">Tocantins</option>
+                    </select> *
+                </p>
+            </fieldset>
+
+           <h2>Informações gerais</h2>
+           <label for="year">
+            <h3>Data de nascimento: <input type="date" name="year" id="year"></h3>
+           </label>
+
+           
+           <h3>Grau de instrução:</h3>
+           <ul>
+    
+            
+            <li>
+                <label for="fun1">
+                    <input type="radio" name="school" id="fun1">
+                    Ensino fundamental incompleto
+                </label> 
+            </li>
+
+            <li>
+                <label for="fun2">
+                    <input type="radio" name="school" id="fun2">
+                    Ensino fundamental completo
+                </label>
+            </li>
+
+            <li>
+                <label for="em1">
+                    <input type="radio" name="school" id="em1">
+                    Ensino médio incompleto
+                </label>
+            </li>
+
+            <li>
+                <label for="em2">
+                    <input type="radio" name="school" id="em2">
+                    Ensino médio completo
+                </label>
+            </li>
+
+            <li>
+                <label for="g1">
+                    <input type="radio" name="school" id="g1">
+                    Superior incompleto
+                </label>
+            </li>
+
+            <li>
+                <label for="g2">
+                    <input type="radio" name="school" id="g2">
+                    Superior completo
+                </label>
+            </li>
+           </ul>
+
+            <h3>Medidas corporais</h3>
+
+            <p>
+                <label for="peso">Peso (em KG):</label>
+                <input type="number" name="peso" id="peso"> *
+            </p>
+
+            <p>
+                <label for="altura">Altura (em CM):</label>
+                <input type="number" name="altura" id="altura"> *
+            </p>
+
+            <button id="btn" type="button">Enviar Informações</button>
+          </form>
+    </main>
+    
+    <script>
+        var botao = document.querySelector("#btn")
+        var peso = document.querySelector("#peso")
+        var altura = document.querySelector("#altura")
+        var fomulario = document.querySelector("#formu")
+        var spinner = document.querySelector("#spinner_box")
+        var resultado = document.querySelector("#res")
+
+        botao.addEventListener("click", calculoIMC)
+
+        function calculoIMC() {
+            
+            if(peso.value==0 || altura.value.length==0 || peso.value <=0 || altura.value < 45) {
+                alert("Valore(s) para peso ou altura inválido(s)")
+                peso.value=""
+                altura.value=""
+                peso.focus()
+                altura.focus()
+            }  else {
+            fomulario.style.display="none"
+            spinner.style.display="block"
+
+            let peso1 = peso.value
+            let massa = Number(peso1)
+
+            let altur = altura.value
+            let altuh = Number(altur)
+            let alt = altuh/100
+
+            let IMC = massa/(alt**2)
+
+            let paragrafo = document.createElement("p")
+            paragrafo.textContent=`Seu IMC é igual a ${IMC.toFixed(2)} \u2705`
+            resultado.appendChild(paragrafo)
+
+            let paraph = document.createElement("p")
+            paraph.textContent=""
+
+            if (IMC < 16){
+                paraph.textContent="Atenção! Seu IMC indica magreza grave!"
+                resultado.appendChild(paraph)
+            } else if (IMC > 16 && IMC <17){
+                paraph.textContent="Atenção! Seu IMC indica magreza moderada!"
+            } else if (IMC > 17 && IMC <18.5){
+                paraph.textContent="Atenção! Seu IMC indica magreza leve!"
+                resultado.appendChild(paraph)
+            } else if (IMC > 18.5 && IMC < 25){
+                paraph.textContent="Atenção! Seu IMC indica que você estar saudável"
+                resultado.appendChild(paraph)
+            } else if (IMC > 25 && IMC < 30){
+                paraph.textContent="Atenção! Seu IMC indica  \u1F611"
+                resultado.appendChild(paraph)
+            } else if (IMC > 30 && IMC <35){
+                paraph.textContent="Atenção! Seu IMC indica obesidade grau I"
+                resultado.appendChild(paraph)
+            } else if (IMC > 35 && IMC <40){
+                paraph.textContent="Atenção! Seu IMC indica obesidade grau II"
+                resultado.appendChild(paraph)
+            } else if (IMC > 40){
+                paraph.textContent="Atenção! Seu IMC indica obesidade grau III"
+                resultado.appendChild(paraph)
+            }
+
+            setTimeout(function(){
+                spinner.style.display="none"
+                resultado.style.display="block"
+            },3000)
+        }
+
+        }
+
+    </script>
+</body>
+</html>
